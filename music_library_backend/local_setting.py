@@ -8,7 +8,7 @@ SECRET_KEY = 'django-insecure-+y0rnb2)!t4*@u2g*$8gz@9wg58mn_usk%*s-51=x__ku8k_7$
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'music_library_backend_project_database',
+        'NAME': 'music_library_backend_project',
         'HOST': 'localhost',
         'USER': 'root',
         'PASSWORD': 'password',

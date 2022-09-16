@@ -112,7 +112,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 try:
-    from music_library_backend_project import*
+    from music_library_backend.local_setting import *
 
 except ImportError:
     pass    
