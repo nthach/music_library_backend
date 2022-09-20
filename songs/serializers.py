@@ -1,10 +1,10 @@
 from dataclasses import field
 from pickle import SHORT_BINSTRING
 from rest_framework import serializers
-from .models import App, Song
+from .models import Song
 
 
-class SongsSerializer(serializers.ModelSerializer):
+class SongSerializer(serializers.ModelSerializer):
     class Meta:
         model = Song
-        fields = ['id', 'make', 'model', 'year', 'price']
+        fields = ['id', 'title', 'artist', 'album', 'release', 'genre']
