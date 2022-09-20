@@ -8,7 +8,7 @@ from songs import serializers
 
 
 @api_view(['GET', 'POST'])
-def music_list(request, pk):
+def music_list(request):
 
     if request.method == 'GET':
         songs = Song.objects.all()
@@ -21,8 +21,8 @@ def music_list(request, pk):
         return Response(serializer.data, status=status.HTTP_201_CREATED)    
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def music_list(request, pk):
-    song = get_object_or_404(Song, pk=pk)
+def music_by_id(request, pk):
+    song = Song.objects.get(pk=pk)
     if request.method == 'GET':
         serializer = SongSerializer(song);
         return Response(serializer.data)
@@ -30,6 +30,6 @@ def music_list(request, pk):
         serializer = SongSerializer(song, data=request.data)
         serializer.save()
         return Response(serializer.data)
-    elif request.mehtod == 'DELETE':
+    elif request.method == 'DELETE':
         song.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)  
